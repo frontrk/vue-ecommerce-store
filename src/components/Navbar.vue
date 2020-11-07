@@ -1,8 +1,7 @@
 <template>
   <b-container>
-    <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand href="#">E-store</b-navbar-brand>
-
+    <b-navbar toggleable="lg" type="light" variant="light">
+      <b-navbar-brand to="/">E-store</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
@@ -17,9 +16,34 @@
                 <b-icon icon="search"></b-icon>
               </b-input-group-append>
             </b-input-group>
-            <b-button size="sm" class="my-2 my-sm-0" type="submit">
+            <b-button
+              size="sm"
+              variant="danger"
+              class="mx-2 my-sm-0"
+              type="submit"
+            >
               <b-icon icon="cart3" aria-hidden="true"></b-icon> Cart
             </b-button>
+            <b-dropdown size="sm" variant="outline-info" class="my-sm-0">
+              <template #button-content>
+                <b-icon icon="person" aria-hidden="true"></b-icon>
+                Account
+              </template>
+              <b-dropdown-item
+                v-if="!$store.getters.isAuthenticated"
+                to="/login"
+                >Login</b-dropdown-item
+              >
+              <b-dropdown-item v-if="!$store.getters.isAuthenticated" href="#"
+                >Sign in</b-dropdown-item
+              >
+
+              <b-dropdown-item
+                @click="logout"
+                v-if="$store.getters.isAuthenticated"
+                >Log out</b-dropdown-item
+              >
+            </b-dropdown>
           </b-nav-form>
         </b-navbar-nav>
       </b-collapse>
@@ -28,7 +52,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navbar",
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+    }
+  }
+};
 </script>
 
 <style scoped style="scss">
