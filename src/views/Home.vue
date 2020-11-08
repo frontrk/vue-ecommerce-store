@@ -41,6 +41,21 @@
         </b-col>
       </b-row>
     </b-container>
+    <b-container>
+      <b-row>
+        <b-col cols="7">
+          <b-card title="Card Title" tag="article" style="height:300px;">
+            <b-card-text>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo
+              vero quae odit magnam asperiores inventore dolorum, pariatur
+              commodi deleniti voluptatibus in facere, corporis, fugiat est
+              velit aperiam praesentium saepe omnis.
+            </b-card-text>
+          </b-card>
+        </b-col>
+        <b-col cols="5"> </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 

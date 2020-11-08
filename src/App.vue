@@ -50,6 +50,9 @@ export default {
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
+.border {
+  border: 1px solid #e5e5e5;
+}
 
 .box-shadow {
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
