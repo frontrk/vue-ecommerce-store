@@ -2,18 +2,7 @@
   <div id="app">
     <b-container fluid class="p-0 m-0">
       <Navbar />
-      <b-container>
-        <div class="nav-scroller py-1 mb-2">
-          <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="#">Clothing</a>
-            <a class="p-2 text-muted" href="#">Shoes</a>
-            <a class="p-2 text-muted" href="#">Watches</a>
-            <a class="p-2 text-muted" href="#">Accessories</a>
-            <a class="p-2 text-muted" href="#">Jewelry</a>
-            <a class="p-2 text-muted" href="#">Handbags</a>
-          </nav>
-        </div>
-      </b-container>
+      <CategoryMenu />
       <router-view />
       <b-container>
         <footer class="blog-footer">
@@ -29,8 +18,9 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import CategoryMenu from "@/components/CategoryMenu";
 export default {
-  components: { Navbar }
+  components: { Navbar, CategoryMenu }
 };
 </script>
 
